@@ -1,38 +1,32 @@
 import React, { useState } from 'react';
 
-function Filter({ onFilter }) {
-  const [titre, setTitre] = useState('');
-  const [note, setNote] = useState(null);
+function Filter() {
+  const [titleFilter, setTitleFilter] = useState('');
+  const [ratingFilter, setRatingFilter] = useState('');
 
-  const handleTitreChange = (event) => {
-    setTitre(event.target.value);
+  const handleTitleChange = (e) => {
+    setTitleFilter(e.target.value);
   };
 
-  const handleNoteChange = (event) => {
-    setNote(event.target.value);
-  };
-
-  const handleFilterSubmit = (event) => {
-    event.preventDefault();
-    onFilter({ titre, note });
+  const handleRatingChange = (e) => {
+    setRatingFilter(e.target.value);
   };
 
   return (
-    <form onSubmit={handleFilterSubmit}>
+    <div>
       <input
         type="text"
         placeholder="Titre du film"
-        value={titre}
-        onChange={handleTitreChange}
+        value={titleFilter}
+        onChange={handleTitleChange}
       />
       <input
-        type="number"
+        type="text"
         placeholder="Note du film"
-        value={note}
-        onChange={handleNoteChange}
+        value={ratingFilter}
+        onChange={handleRatingChange}
       />
-      <button type="submit">Filtrer</button>
-    </form>
+    </div>
   );
 }
 

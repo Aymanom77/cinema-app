@@ -1,16 +1,15 @@
+// FilmCard.js
 import React from 'react';
 
-function FilmCard({ titre, description, posterURL, note }) {
+const FilmCard = ({ title, description, posterURL, rating }) => {
   return (
     <div className="film-card">
-      <img src={posterURL} alt={titre} />
-      <div className="film-info">
-        <h2>{titre}</h2>
-        <p>{description}</p>
-        <p>Note : {note}</p>
-      </div>
+      <img src={posterURL} alt={title} />
+      <h2>{title}</h2>
+      <p>{description}</p>
+      <p>Note: {rating}</p>
     </div>
   );
-}
+};
 
 export default FilmCard;
